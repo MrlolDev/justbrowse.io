@@ -1,6 +1,6 @@
 {
   "name": "justbrowse.io",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A nodejs package to interact with the justbrowse.io",
   "main": "dist/index.js",
   "type": "module",

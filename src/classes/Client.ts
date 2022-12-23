@@ -64,7 +64,6 @@ export default class Client {
         throw response.status;
       }
       var json = await response.json();
-      console.log(json);
       return json.reply[0];
     } catch (err) {
       throw err;
