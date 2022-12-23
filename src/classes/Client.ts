@@ -61,7 +61,7 @@ export default class Client {
         }),
       });
       var json = await response.json();
-      return json.reply;
+      return json.reply[0];
     } catch (err) {
       throw err;
     }

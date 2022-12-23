@@ -28,6 +28,6 @@ export default class Conversation {
       this.conversationId = json.conversationId;
     }
 
-    return json.reply;
+    return json.reply[0];
   }
 }
