@@ -31,7 +31,7 @@ export default class Client {
     }
   }
 
-  async checkStatus() {
+  async status() {
     try {
       var response = await fetch(
         `${API_URL}/status?sessionId=${this.sessionId}`,

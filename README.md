@@ -22,14 +22,18 @@ const apiToken = "Go to https://justbrowse.io to get your api token";
 (async () => {
   var client = new Client(sessionToken, apiToken);
   await client.init();
-  // Send a message:
-  var response = await client.chat("message");
-  console.log(response);
-  // Create a new conversation:
-  var conversation = await client.createConversation();
-  // send a message to the conversation:
-  var res = await conversation.sendMessage("message", message);
-  console.log(res);
+  // check status:
+  var status = await client.status();
+  if (status == "ready") {
+    // Send a message:
+    var response = await client.chat("message");
+    console.log(response);
+    // Create a new conversation:
+    var conversation = await client.createConversation();
+    // send a message to the conversation:
+    var res = await conversation.sendMessage("message", message);
+    console.log(res);
+  }
 })();
 ```
 
