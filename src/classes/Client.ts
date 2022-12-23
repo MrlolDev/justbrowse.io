@@ -60,6 +60,9 @@ export default class Client {
           message: message,
         }),
       });
+      if (response.status != 200) {
+        throw response.status;
+      }
       var json = await response.json();
       return json.reply[0];
     } catch (err) {
