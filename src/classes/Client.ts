@@ -1,3 +1,4 @@
+import Conversation from "./Conversation";
 const API_URL = "https://justbrowse.io/api/chatgpt";
 
 export default class Client {
@@ -64,5 +65,10 @@ export default class Client {
     } catch (err) {
       throw err;
     }
+  }
+
+  createConversation() {
+    var conversation = new Conversation(this.sessionId, this.apiToken);
+    return conversation;
   }
 }

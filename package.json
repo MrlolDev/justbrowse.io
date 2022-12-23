@@ -1,6 +1,6 @@
 {
   "name": "justbrowse.io",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A nodejs package to interact with the justbrowse.io",
   "main": "dist/index.js",
   "type": "module",
@@ -18,13 +18,21 @@
   "bugs": {
     "url": "https://github.com/MrlolDev/justbrowse.io/issues"
   },
-  "homepage": "https://github.com/MrlolDev/justbrowse.io#readme",
+  "homepage": "https://justbrowse.io",
+  "keywords": [
+    "justbrowse.io",
+    "chatgpt",
+    "chat-gpt",
+    "gpt"
+  ],
   "dependencies": {
     "node-fetch": "^3.3.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",
+    "concurrently": "^7.6.0",
     "nodemon": "^2.0.20",
+    "prettier": "^2.8.1",
     "typescript": "^4.9.4"
   }
 }
