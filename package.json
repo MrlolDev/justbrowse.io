@@ -1,6 +1,6 @@
 {
   "name": "justbrowse.io",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "A nodejs package to interact with the justbrowse.io",
   "main": "dist/index.js",
   "type": "module",
@@ -25,8 +25,8 @@
     "chat-gpt",
     "gpt"
   ],
-  "dependencies": {
-    "node-fetch": "^3.3.0"
+  "engines": {
+    "node": "<=18.12.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",

@@ -4,6 +4,8 @@ A nodejs package to interact with the justbrowse.io
 
 ## Installation
 
+Required node 18 or higher since we use native fetch.
+
 ```
 npm i justbrowse.io
 pnpm add justbrowse.io
