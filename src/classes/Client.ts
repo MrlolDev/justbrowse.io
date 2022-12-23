@@ -1,4 +1,4 @@
-import Conversation from "./Conversation";
+import Conversation from "./Conversation.js";
 const API_URL = "https://justbrowse.io/api/chatgpt";
 
 export default class Client {
