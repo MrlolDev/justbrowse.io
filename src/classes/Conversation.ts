@@ -1,4 +1,5 @@
 const API_URL = "https://justbrowse.io/api/chatgpt";
+import fetch from "cross-fetch";
 
 export default class Conversation {
   sessionId: string;

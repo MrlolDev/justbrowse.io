@@ -1,5 +1,6 @@
 import Conversation from "./Conversation.js";
 const API_URL = "https://justbrowse.io/api/chatgpt";
+import fetch from "cross-fetch";
 
 export default class Client {
   apiToken: string;
