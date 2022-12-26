@@ -7,19 +7,23 @@ export default class Client {
   sessionId: string;
   sessionToken: string;
 
-  constructor(sessionToken: string, apiToken: string) {
+  constructor(sessionToken: string, apiToken?: string) {
     this.apiToken = apiToken;
     this.sessionToken = sessionToken;
   }
 
   async init() {
     try {
+      var headers = {};
+      if (this.apiToken) {
+        headers = {
+          authorization: `Bearer ${this.apiToken}`,
+        };
+      }
       var response = await fetch(
         `${API_URL}/connect?sessionToken=${this.sessionToken}`,
         {
-          headers: {
-            authorization: `Bearer ${this.apiToken}`,
-          },
+          headers: headers,
         }
       );
       if (response.status != 200) {
@@ -33,13 +37,17 @@ export default class Client {
   }
 
   async status() {
+    var headers = {};
+    if (this.apiToken) {
+      headers = {
+        authorization: `Bearer ${this.apiToken}`,
+      };
+    }
     try {
       var response = await fetch(
         `${API_URL}/status?sessionId=${this.sessionId}`,
         {
-          headers: {
-            authorization: `Bearer ${this.apiToken}`,
-          },
+          headers: headers,
         }
       );
       var json = await response.json();
@@ -50,13 +58,19 @@ export default class Client {
   }
 
   async chat(message: string) {
+    var headers: {} = {
+      "content-type": "application/json",
+    };
+    if (this.apiToken) {
+      headers = {
+        "content-type": "application/json",
+        authorization: `Bearer ${this.apiToken}`,
+      };
+    }
     try {
       var response = await fetch(`${API_URL}/chat/${this.sessionId}`, {
         method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${this.apiToken}`,
-        },
+        headers: headers,
         body: JSON.stringify({
           message: message,
         }),

@@ -17,10 +17,11 @@ We create our client:
 ```js
 import Client from "justbrowse.io";
 const sessionToken = "Read Bellow how to get your chatgpt session token";
-const apiToken = "Go to https://justbrowse.io to get your api token";
+const apiToken = "Go to https://justbrowse.io to get your api token"; // API token is now optional
 
 (async () => {
-  var client = new Client(sessionToken, apiToken);
+  var client = new Client(sessionToken);
+  // var client = new Client(sessionToken, apiToken);
   await client.init();
   // check status:
   var status = await client.status();

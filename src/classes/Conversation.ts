@@ -6,18 +6,24 @@ export default class Conversation {
   apiToken: string;
   conversationId: string | null = null;
 
-  constructor(sessionId: string, apiToken: string) {
+  constructor(sessionId: string, apiToken?: string) {
     this.sessionId = sessionId;
     this.apiToken = apiToken;
   }
 
   async sendMessage(message: string) {
-    var response = await fetch(`${API_URL}/chat/${this.sessionId}`, {
-      method: "POST",
-      headers: {
+    var headers: {} = {
+      "content-type": "application/json",
+    };
+    if (this.apiToken) {
+      headers = {
         "content-type": "application/json",
         authorization: `Bearer ${this.apiToken}`,
-      },
+      };
+    }
+    var response = await fetch(`${API_URL}/chat/${this.sessionId}`, {
+      method: "POST",
+      headers: headers,
       body: JSON.stringify({
         message: message,
         conversationId: this.conversationId,
