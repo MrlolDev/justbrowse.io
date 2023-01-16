@@ -1,12 +1,12 @@
 {
   "name": "justbrowse.io",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A nodejs package to interact with the justbrowse.io",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build:watch": "concurrently \"pnpm run format\" \"tsc --watch\"",
-    "build": "concurrently \"pnpm run format\" \"tsc\"",
+    "build:watch": "concurrently \"npm run format\" \"tsc --watch\"",
+    "build": "concurrently \"npm run format\" \"tsc\"",
     "format": "prettier --write \"src/**/*.ts\""
   },
   "repository": {
@@ -23,6 +23,7 @@
     "justbrowse.io",
     "chatgpt",
     "chat-gpt",
+    "crawler",
     "gpt"
   ],
   "devDependencies": {

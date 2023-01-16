@@ -1,3 +1,4 @@
-import Client from "./classes/Client.js";
+import ChatGPT from "./classes/ChatGPT/Client.js";
+import Crawl from "./classes/Crawl/Client.js";
 
-export default Client;
+export { ChatGPT, Crawl };

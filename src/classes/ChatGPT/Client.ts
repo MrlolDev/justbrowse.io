@@ -3,9 +3,9 @@ const API_URL = "https://justbrowse.io/api/chatgpt";
 import fetch from "cross-fetch";
 
 export default class Client {
-  apiToken: string;
-  sessionId: string;
-  sessionToken: string;
+  private apiToken: string;
+  public sessionId: string;
+  private sessionToken: string;
 
   constructor(sessionToken: string, apiToken?: string) {
     this.apiToken = apiToken;
